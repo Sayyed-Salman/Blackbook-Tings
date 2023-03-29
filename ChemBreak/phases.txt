@@ -1,0 +1,199 @@
+Introduction 
+
+The puropse of chembreak is to store and record the damages that occur in the chemistry lab such as breaking of apparatus it
+to record and such acts and take damage charges from respective students in an automated way to create breakage reports and manage all records chembreak is used.
+
+Features include : login in, create apparatus, edit apparatus, delete apparatus, add breakage, print report
+
+cmd :
+With the above information write an introduction section of a blackbook define its objectives and the need of the app.
+
+>> Output
+
+Chembreak is a modern and innovative app designed to streamline the process of recording and managing damages that occur in chemistry laboratories. The primary objective of Chembreak is to provide a comprehensive and efficient solution to manage breakage reports, record incidents of broken apparatus and charge the respective students in an automated way. The app is an essential tool that eliminates the need for manual documentation of incidents, reduces the workload on lab staff, and ensures a smooth and efficient workflow in the lab.
+
+The need for Chembreak arises from the increasing frequency of damages that occur in chemistry labs and the cumbersome process of managing the records. Chembreak simplifies the task of documentation by providing a user-friendly interface that enables users to create, manage, and share breakage reports in real-time. With Chembreak, lab staff can easily track and monitor breakages, identify the culprits responsible for the damages and charge them accordingly. Moreover, the app generates comprehensive reports that help in analyzing trends and identifying areas of improvement. In summary, Chembreak is an essential tool for any chemistry lab that seeks to enhance its efficiency and productivity by automating the process of managing breakages.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Proposed system and advantages 
+
+cmd : write a proposed system and advantages section, the system before used was manual recording on pen and paper
+
+>> Output 
+
+Proposed System:
+
+Chembreak is a digital solution that simplifies the process of recording and managing damages that occur in chemistry labs. The app is designed to replace the traditional pen-and-paper method of documenting breakages and incidents. Chembreak allows users to record incidents of broken apparatus and generate breakage reports with just a few clicks. The app also automates the process of charging students for damages, eliminating the need for manual calculations and record-keeping. With Chembreak, lab staff can easily monitor and manage breakages in real-time, ensuring a smooth workflow and efficient operation of the lab.
+
+Advantages of Chembreak:
+
+Improved Efficiency: Chembreak streamlines the process of recording and managing breakages, reducing the workload on lab staff and enhancing the overall efficiency of the lab.
+
+Real-time Monitoring: With Chembreak, lab staff can monitor breakages in real-time, ensuring that damages are quickly identified and addressed.
+
+Automated Charging: Chembreak automates the process of charging students for damages, eliminating the need for manual calculations and record-keeping.
+
+Comprehensive Reporting: The app generates comprehensive reports that help in analyzing trends and identifying areas of improvement.
+
+User-friendly Interface: Chembreak has a user-friendly interface that enables users to create, manage, and share breakage reports with ease.
+
+Cost-effective: Chembreak is a cost-effective solution that eliminates the need for manual documentation and record-keeping, reducing the overall operational costs of the lab.
+
+In summary, Chembreak is a modern and innovative solution that enhances the efficiency and productivity of chemistry labs by automating the process of managing breakages. With its real-time monitoring, automated charging, and comprehensive reporting, Chembreak is a valuable tool that simplifies the task of documentation and enhances the overall performance of the lab.
+
+
+_-------------------------------------------------------------------------------------------------------------------------
+
+
+System Requirements 
+
+cmd : Write system requirements section with hardware and software requirements listed for an python3 web application with flask as the web framework and sqlite as the database layer sqlalchmey as ORM and the required libraries more the web app works on all platforms and can be hosted on cloud
+
+>> output 
+
+Hardware:
+
+Processor: 1.5 GHz or higher
+RAM: 2 GB or higher
+Storage: 50 MB or more free disk space
+Software:
+
+Operating System: Any platform that supports Python3, such as Windows, Linux, or macOS
+
+Python: Version 3.6 or higher
+
+Flask: Version 2.0.2 or higher
+
+SQLAlchemy: Version 1.4.0 or higher
+
+SQLite: Version 3.36.0 or higher
+
+Other Required Libraries:
+
+Jinja2: Version 3.0.1 or higher
+WTForms: Version 3.0.0 or higher
+Flask-WTF: Version 1.0.0 or higher
+Werkzeug: Version 2.0.2 or higher
+Cloud Hosting:
+
+Any cloud hosting platform that supports Python applications and SQLite databases, such as Amazon Web Services, Google Cloud Platform, or Microsoft Azure.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Class Diagram ;
+
+CMD :
+User Table (admin login)
+        {
+            id
+            username
+            password
+        }
+   
+    Breakage Table
+        {
+            breakage_id (g)
+            date (g)
+            apparatus_id (i)
+            quantity (i)
+            student_unique_id (g)
+            total_price (g)
+        }
+
+    Student Table
+        {
+            student_id (g)
+            unique_id (eg : FY29Y23 : FY = First Year, 29 = Roll No, Y = Year 2023) (g)
+            roll_no (i)
+            class(fy, sy, ty) (i)
+            section(default=Chemistry) (i)
+        }
+ 
+    Apparatus Table
+        {
+            apparatus_id (g)
+            name (i)[eg: Bunsen Burner, Beaker, Test Tube , etc.]
+            size (i)[eg: 100ml, 250ml, 500ml, 1L, etc.]
+            price (i) [eg: 100, 200, 300, etc.]
+        }
+
+    Records Table (g)
+        {
+            record_id
+            message ( message is generated from "breakage_table" output, contains apparatus and quantity )
+            student_unique_id
+            date
+        }
+
+    Bank Table (g)
+        {
+            id
+            student_unique_id
+            amount
+        } 
+
+create a class diagram for the above schema and other uml diagrams too
+
+
+>> Output :
+
+Unfortunately, as an AI language model, I cannot create images. However, I can provide you with a written class diagram:
+
+Classes:
+
+User
+id : int
+username : string
+password : string
+Breakage
+breakage_id : int (generated)
+date : date
+apparatus_id : int
+quantity : int
+student_unique_id : string
+total_price : float (generated)
+Student
+student_id : int (generated)
+unique_id : string (generated)
+roll_no : int
+class : string
+section : string (default = "Chemistry")
+Apparatus
+apparatus_id : int (generated)
+name : string
+size : string
+price : float
+Records
+record_id : int (generated)
+message : string (generated from Breakage output)
+student_unique_id : string
+date : date
+Bank
+id : int (generated)
+student_unique_id : string
+amount : float
+Relationships:
+
+User has a one-to-many relationship with Records
+Student has a one-to-many relationship with Breakage and Records
+Apparatus has a one-to-many relationship with Breakage
+Bank has a one-to-one relationship with Student
+UML Diagrams:
+
+Use case diagram: includes actors (User) and use cases (Login, View Breakage Records, Update Breakage Records, View Bank Balance, Update Bank Balance)
+Activity diagram: shows the flow of activities in the system (e.g. login process, record update process)
+Sequence diagram: shows the interaction between actors and the system during specific processes (e.g. login process, update record process)
+State diagram: shows the possible states of objects in the system and the events that trigger state changes (e.g. the state of a Breakage object can change from "open" to "closed" when the record is updated)
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+Events ;
+User login 
+Trigger 
+login()
