@@ -1,0 +1,54 @@
+Applicatiion URL = https://genesis-10ad7.web.app/
+
+
+:<The Smart Contract/>: 
+- The smart contract is a crowdfunding platform written in Solidity. The contract has several functions for creating, updating, and deleting a project. A user can also back a project by sending Ether to the contract, and if the project is fully funded, the contract will automatically pay out the funds to the project owner, taking a percentage as a project tax.
+
+- The contract contains several structs for storing information about projects and backers. There are also several mappings for keeping track of which projects belong to which owners, which backers have backed a particular project, and whether a project exists or not.
+
+- The contract has several modifiers, including one for owner-only functions. There is also an event that emits whenever a project is created, updated, backed, or deleted.
+
+
+
+:<The Front End/>: 
+- The front end is a simple web application written in JavaScript. It uses the Web3.js library to interact with the smart contract. The front end has several pages for creating, updating, and deleting a project, as well as a page for backing a project. The front end also has a page for viewing all projects, and a page for viewing a particular project.
+
+- The front end is deployed on firebase hosting.
+
+- The front end uses the MetaMask browser extension to interact with the Ethereum network.
+
+
+[Show the Alchemy Dashboard]
+> https://dashboard.alchemy.com/apps/0tzzpumqqrpb5jua
+
+[Show the MetaMask extension]
+> https://metamask.io/
+
+[Show the Smart Contract]
+> https://github.com/naquansari/Genesis/blob/main/src/contracts/Genesis.sol
+
+[Show the Front End on firebase]
+> https://console.firebase.google.com/project/genesis-10ad7/overview
+
+
+
+Demonstration :
+
+1) Open the front end in a browser. The front end is deployed on firebase hosting.
+
+2) Connect MetaMask to the Goerli test network.
+
+3) Create a project by clicking the “Add Project” button. Fill out the form and click “Add Project”.
+
+5) Back the project by clicking the “Back Project” button. Fill out the form and click “Back Project”.
+
+
+:<The Purpose/>:
+The purpose of a blockchain crowdfunding project is to enable the creation and funding of projects through a decentralized network of individuals, without the need for intermediaries such as banks or venture capitalists. Blockchain crowdfunding projects leverage the transparency, immutability, and security of blockchain technology to create a trustless environment where project owners and backers can interact directly, and where the integrity of transactions and project data is ensured through the consensus mechanism of the blockchain. This democratization of the fundraising process allows for greater inclusivity, as anyone with access to the internet and a cryptocurrency wallet can participate in the funding of projects that align with their interests and values. Additionally, blockchain crowdfunding projects can provide more control to project owners, who can retain ownership and creative control over their projects, and can interact directly with their backers.
+
+
+:<The Future/>:
+The future of blockchain crowdfunding projects is bright. As the technology continues to mature, and as more people become aware of the benefits of blockchain technology, blockchain crowdfunding projects will become more popular and more widely adopted. As the technology matures, the cost of deploying and interacting with smart contracts will decrease, and the process of creating and funding projects will become more streamlined and user-friendly. Additionally, as more people become aware of the benefits of blockchain technology, more people will become interested in participating in blockchain crowdfunding projects, and the number of projects will increase. As the number of projects increases, the number of backers will increase, and the number of projects that are successfully funded will increase. As the number of projects that are successfully funded increases, the number of projects that are successfully completed will increase, and the number of projects that are successfully completed will increase. 
+
+
+github : https://github.com/naqiansari-topg/Genesis
